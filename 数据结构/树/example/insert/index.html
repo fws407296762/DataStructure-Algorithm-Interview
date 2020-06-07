@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>插入数据</title>
+</head>
+<body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  <script>
+    require(["../../built/BinarySearchTree.js"],function(module){
+      console.log("module:",module)
+      let BinarySearchTree = new module.BinarySearchTree()
+      BinarySearchTree.insert(11)
+      BinarySearchTree.insert(7)
+      BinarySearchTree.insert(15)
+      BinarySearchTree.insert(5);
+      BinarySearchTree.insert(13);
+      BinarySearchTree.insert(20);
+      BinarySearchTree.insert(3);
+      BinarySearchTree.insert(6);
+      BinarySearchTree.insert(8);
+      BinarySearchTree.insert(10);
+      BinarySearchTree.insert(12);
+      BinarySearchTree.insert(14);
+      BinarySearchTree.insert(18);
+      BinarySearchTree.insert(25);
+    })
+  </script>
+</body>
+</html>

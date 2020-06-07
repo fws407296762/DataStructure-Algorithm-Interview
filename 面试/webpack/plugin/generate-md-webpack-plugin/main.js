@@ -1,0 +1,1 @@
+consple.log("测试GenerateMdWebpackPlugin");
