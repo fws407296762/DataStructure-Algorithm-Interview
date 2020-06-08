@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo{
+            width: 600px;
+            height: 600px;
+            background-color: #000000;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+        ul,li{
+            margin: 0;
+            list-style-type: none;
+            padding: 0;
+        }
+        ul{
+            width: 400px;
+            height: 400px;
+            background-color:#fff;
+            border-radius: 50%;
+            position: relative;
+        }
+        li{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            background-color:red;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            left: 50%;
+            margin-left: -20px;
+            margin-top: -20px;
+        }
+        li:nth-of-type(2){
+            transform: rotate(45deg);
+            transform-origin:20px 220px;
+        }
+        li:nth-of-type(3){
+            transform: rotate(90deg);
+            transform-origin:20px 220px;
+        }
+        li:nth-of-type(4){
+            transform: rotate(135deg);
+            transform-origin:20px 220px;
+        }
+        li:nth-of-type(5){
+            transform: rotate(180deg);
+            transform-origin:20px 220px;
+        }
+        li:nth-of-type(6){
+            transform: rotate(225deg);
+            transform-origin:20px 220px;
+        }
+        li:nth-of-type(7){
+            transform: rotate(270deg);
+            transform-origin:20px 220px;
+        }
+        li:nth-of-type(8){
+            transform: rotate(315deg);
+            transform-origin:20px 220px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+    </div>
+</body>
+</html>
