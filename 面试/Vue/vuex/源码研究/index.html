@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+    <input type="text" v-model="address">
+    <button @click="showWeather">显示当前天气</button>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script src="../vuex.js"></script>
+<script>
+  let store = new Vuex.Store({
+    modules:{
+      weather:{
+        state:()=>({
+          url:"http://api.avatardata.cn/Weather/Query?key=d31d7757636a419eb7f87656825e19b0&cityname=",
+          refreshtime:5000
+        }),
+        mutations:{
+          requestWeather(state,address){
+            fetch(state.url+address)
+              .then(function(response){
+                return response.json();
+              })
+          },
+          requestWeather(state,address){
+            console.log(1111111212)
+          }
+        }
+      }
+    }
+  })
+
+  let vm = new Vue({
+    data:{
+      address:""
+    },
+    store,
+    beforeCreate(){
+      console.log(this)
+    },
+    methods:{
+      showWeather(){
+        console.log(this.$store.state.weather);
+        this.$store.commit('requestWeather',this.address)
+      }
+    }
+  })
+  vm.$mount("#root")
+</script>
+</body>
+</html>

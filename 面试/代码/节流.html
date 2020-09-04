@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        div{height: 500000px;}
+    </style>
+</head>
+<body>
+<div>防抖测试</div>
+<script>
+    function throttle(fn,delay){
+      let valid = true;
+      return function(){
+        if(!valid){
+          return false;
+        }
+        valid = false;
+        setTimeout(()=>{
+          fn();
+          valid = true;
+        },delay)
+      }
+    }
+    function showTop(){
+      let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      console.log('滚动条位置：' + scrollTop);
+    }
+    window.onscroll = throttle(showTop,1000);
+</script>
+</body>
+</html>

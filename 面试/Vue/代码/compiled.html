@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+    <!--你好-->
+    <!--你好-->
+    <h1 href="$mount.html" v-if="a === 1"></p>
+</div>
+
+<script src="vue.js"></script>
+<script type="text/x-template" id="childrenOne">
+    <p>子组件-ONE</p>
+</script>
+<script>
+    // Vue.component("children-one",{
+    //   template:"#childrenOne"
+    // })
+    var res = Vue.compile(document.getElementById("root").outerHTML,{
+      whitespace:"condense"
+    })
+  let vm = new Vue({
+    render: res.render,
+    data:{
+      a:1
+    }
+  })
+  console.log(vm);
+</script>
+</body>
+</html>

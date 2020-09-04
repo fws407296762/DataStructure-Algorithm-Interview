@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+    {{time}}
+    <child-component></child-component>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script>
+    let child = {
+      template:"<div>frome Children{{}}</div>",
+      beforeCreate(){
+        console.log("child_beforeCreate");
+      },
+      created(){
+        console.log("child_created");
+      },
+      beforeMount(){
+        console.log("child_beforeMount");
+      },
+      mounted(){
+        console.log("child_mounted");
+      },
+      beforeUpdate(){
+        console.log("child_beforeUpdate");
+      },
+      updated(){
+        console.log("child_updated");
+      }
+    }
+    let vm = new Vue({
+      components:{
+        "child-component":child
+      },
+      data:{
+        time:new Date()
+      },
+      beforeCreate(){
+        console.log("vm_beforeCreate");
+      },
+      created(){
+        console.log("vm_created");
+      },
+      beforeMount(){
+        console.log("vm_beforeMount");
+      },
+      mounted(){
+        console.log("vm_mounted");
+      },
+      beforeUpdate(){
+        console.log("vm_beforeUpdate");
+      },
+      updated(){
+        console.log("vm_updated");
+      }
+    })
+    vm.$mount("#root")
+</script>
+</body>
+</html>

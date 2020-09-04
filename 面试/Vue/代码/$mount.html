@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="vue.js"></script>
+<script>
+    let vm = new Vue({
+      el:"#root",
+      beforeCreate(){
+        console.log("beforeCreate")
+      },
+      created(){
+        console.log("created")
+      },
+      beforeMount(){
+        console.log("beforeMount")
+      }
+    })
+    console.log(vm);
+</script>
+</body>
+</html>

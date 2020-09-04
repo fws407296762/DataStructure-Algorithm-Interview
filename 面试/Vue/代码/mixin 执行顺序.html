@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+    {{time}}
+    <child-component></child-component>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script>
+  let mixin = {
+    template:"<div>frome Children{{}}</div>",
+    beforeCreate(){
+      console.log("mixin_beforeCreate");
+    },
+    created(){
+      console.log("mixin_created");
+    },
+    beforeMount(){
+      console.log("mixin_beforeMount");
+    },
+    mounted(){
+      console.log("mixin_mounted");
+      this.a();
+    },
+    beforeUpdate(){
+      console.log("mixin_beforeUpdate");
+    },
+    updated(){
+      console.log("mixin_updated");
+    },
+    methods:{
+      a(){
+        console.log("mixin_a")
+      }
+    }
+  }
+  let vm = new Vue({
+    mixins:[mixin],
+    data:{
+      time:new Date()
+    },
+    beforeCreate(){
+      console.log("vm_beforeCreate");
+    },
+    created(){
+      console.log("vm_created");
+    },
+    beforeMount(){
+      console.log("vm_beforeMount");
+    },
+    mounted(){
+      console.log("vm_mounted");
+      this.a();
+    },
+    beforeUpdate(){
+      console.log("vm_beforeUpdate");
+    },
+    updated(){
+      console.log("vm_updated");
+    },
+    methods:{
+      a(){
+        console.log("vm_a")
+      }
+    }
+  })
+  vm.$mount("#root")
+</script>
+</body>
+</html>

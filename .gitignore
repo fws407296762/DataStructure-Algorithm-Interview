@@ -1,3 +1,4 @@
 /.idea
 /面试/node_modules
 /面试/package-lock.json
+/面试/nodejs/在一个全局安装组件中引用依赖执行/node_modules
