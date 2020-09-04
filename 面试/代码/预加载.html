@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预加载</title>
+</head>
+<body>
+<script>
+    window.onload = function(){
+        let img = new Image();
+        img.onload = function(){
+            img.onload = null;
+        }
+        img.onerror = function(){
+            console.log("请求失败")
+        }
+        img.src = "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2874169978,1601152538&fm=26&gp=0.jpg";
+        document.body.appendChild(img);
+    }
+</script>
+</body>
+</html>
