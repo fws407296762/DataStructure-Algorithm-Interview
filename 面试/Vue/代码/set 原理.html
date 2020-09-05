@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="root">
+  {{time}}{{abc.a}}{{abc.b}}{{abc.c}}
+  <input type="text" v-model="abc.a">
+  <div ref="div1">{{cbd}}</div>
+  <button @click="modifyCbd">点击</button>
+
+</div>
+<script src="./vue.js"></script>
+<script>
+  let data = {
+    time:new Date(),
+    abc:{},
+    cbd:22222
+  }
+  let vm = new Vue({
+    data:data,
+    watch:{
+      "abc.a"(n,o){
+        console.log(n,o);
+      }
+    },
+    beforeCreate(){
+
+    },
+    created(){
+      this.$set(this.abc,"a",1)
+      this.$set(this.abc,"b",2)
+      this.$set(this.abc,"c",3)
+    },
+    methods:{
+      modifyCbd(){
+        this.cbd = 121212;
+        this.$nextTick(function(){
+          console.log("this.cbd",this.$refs.div1.innerText)
+        })
+
+      }
+    }
+  })
+
+
+  vm.$mount("#root")
+</script>
+</body>
+</html>
